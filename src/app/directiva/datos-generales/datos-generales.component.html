@@ -1,0 +1,35 @@
+<main class="container">
+  <section class="row d-flex justify-content-center my-4">
+    <article class="col-5 bg-secondary">
+      <h3 class="text-center my-3">Formulario de presentacion</h3>
+      <form action="" (ngSubmit)="validar()">
+        <section class="input-group my-4">
+          <label for="" class="input-group-text">Nombre: </label>
+          <input type="text" placeholder="Escribe tu nombre" class="form-control" name="nombre" [(ngModel)]="datos.nombre">
+        </section>
+        <section class="input-group my-4">
+          <label for="" class="input-group-text">Apellido: </label>
+          <input type="text" placeholder="Escribe tu apellido" class="form-control" name="apellido" [(ngModel)]="datos.apellido">
+        </section>
+        <section class="input-group my-4">
+          <label for="" class="input-group-text">Edad: </label>
+          <input type="number" placeholder="Escribe tu edad" class="form-control" name="edad" [(ngModel)]="datos.edad">
+        </section>
+        <section class="input-group my-4 justify-content-center">
+          <button type="submit" class="btn btn-success">Registrar</button>
+        </section>
+      </form>
+    </article>
+  </section>
+
+  <section *ngIf="datos.edad>18;">
+    <section class="row d-flex justify-content-center my-4">
+      <article class="col-5 bg-secondary">
+        <h3 class="text-center my-3">Formulario de presentacion</h3>
+        <ul *ngFor="let arreglo of datosArreglo">
+          <li>{{arreglo.nombre}} - {{arreglo.apellido}} - {{arreglo.edad}}</li>
+        </ul>
+      </article>
+    </section>
+  </section>
+</main>
